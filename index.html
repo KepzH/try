@@ -29,8 +29,9 @@
   <canvas id="stars-canvas"></canvas>
 
   <!-- navbar -->
-  <nav>
+  <nav class="liquid-nav">
     <div class="nav-logo">AKASHA<span>.xyz</span></div>
+    
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -38,7 +39,24 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+
+    <div class="nav-toggle" id="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </nav>
+
+  <!-- mobile -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <ul class="mobile-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#terminal">Terminal</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
 
   <!-- main -->
   <main class="container">
@@ -357,6 +375,24 @@
       }
     });
 
+    // drawer logic
+const navToggle = document.getElementById('nav-toggle');
+const mobileDrawer = document.getElementById('mobile-drawer');
+const mobileLinks = document.querySelectorAll('.mobile-links a');
+
+if (navToggle && mobileDrawer) {
+  navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('active');
+    mobileDrawer.classList.toggle('active');
+  });
+
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.classList.remove('active');
+      mobileDrawer.classList.remove('active');
+    });
+  });
+}
     // calc logik
     function calculateWinrate(totalMatch, currentWr, targetWr) {
       const match = parseFloat(totalMatch);
