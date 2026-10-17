@@ -159,14 +159,13 @@
             <span class="btn-minimize"></span>
             <span class="btn-maximize"></span>
           </div>
-          <div class="terminal-title">root@:~</div>
+          <div class="terminal-title">root@akasha:~</div>
         </div>
         <div class="terminal-body" id="terminal-body">
-          <p class="term-line"><span class="term-green">root@akasha:~</span>:<span class="term-blue">~</span>$ help</p>
-          <p class="term-response">Available commands: <span class="term-amber">about</span>, <span class="term-amber">skills</span>, <span class="term-amber">projects</span>, <span class="term-amber">clear</span>, <span class="term-amber">contact</span></p>
+          <p class=""term-line">Welcome to the interactive terminal. Type <span class="term-amber">help</span> for a list of available commands.</p>
           <div id="terminal-output"></div>
           <div class="terminal-input-line">
-            <span class="term-green">root@akasha:~</span>:<span class="term-blue">~</span>$&nbsp;
+            <span class="term-green">root@akasha</span>:<span class="term-blue">~</span>$&nbsp;
             <input type="text" id="terminal-input" autofocus autocomplete="off" spellcheck="false">
           </div>
         </div>
@@ -345,7 +344,7 @@
         let response = commands[inputVal] || `Command not found: '${inputVal}'. Type <span class="term-amber">help</span> for a list of available commands.`;
 
         line.innerHTML = `
-          <p class="term-line"><span class="term-green">kevin@blackhole-vps</span>:<span class="term-blue">~</span>$ ${inputVal}</p>
+          <p class="term-line"><span class="term-green">root@akasha:~</span>:<span class="term-blue">~</span>$ ${inputVal}</p>
           <p class="term-response">${response}</p>
         `;
 
