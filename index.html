@@ -165,8 +165,10 @@
           <p class=""term-line">Welcome to the interactive terminal. Type <span class="term-amber">help</span> for a list of available commands.</p>
           <div id="terminal-output"></div>
           <div class="terminal-input-line">
-            <span class="term-green">root@akasha</span>:<span class="term-blue">~</span>$&nbsp;
-            <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" enterkeyhints="send">
+            <form id="terminal-form" action="javascript:void(0);" style="display: flex; width: 100%; align-items: center;">
+              <span class="term-green">root@akasha</span>:<span class="term-blue">~</span>$&nbsp;
+              <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" enterkeyhints="go">
+            </form>
           </div>
         </div>
       </div>
@@ -235,12 +237,12 @@
         <div class="item-sub">Calculate your games winrate in here</div>
 
         <!-- interface -->
-        <div class="wr-calculator-form" style="display: flex; flex-direction: column; gap: 0.8rem; margin: 1rem 0;">
+        <form id="winrate-form" action="javascript:void(0);" class="wr-calculator-form" style="display: flex; flex-direction: column; gap: 0.8rem; margin: 1rem 0;">
           <input type="number" id="total-match" placeholder="Current total match" class="tag" style="padding: 0.6rem; color: #fff; outline: none;">
           <input type="number" id="current-wr" placeholder="Current winrate" class="tag" style="padding: 0.6rem; color: #fff; outline: none;">
-          <input type="number" id="target-wr" placeholder="Winrate target)" class="tag" style="padding: 0.6rem; color: #fff; outline: none;">
-          <button id="btn-calculate" class="btn-sm btn-primary" style="cursor: pointer; justify-content: center; padding: 0.6rem;">Count </button>
-        </div>
+          <input type="number" id="target-wr" placeholder="Winrate target" class="tag" style="padding: 0.6rem; color: #fff; outline: none;">
+          <button type="submit" id="btn-calculate" class="btn-sm btn-primary" style="cursor: pointer; justify-content: center; padding: 0.6rem;">Count </button>
+        </form>
 
         <!-- hasil -->
         <div id="result-output" style="font-size: 0.88rem; margin-top: 0.5rem; font-weight: 500;"></div>
@@ -330,6 +332,7 @@
     termInput.addEventListener('keydown', function(e) {
       if (e.key === 'Enter') {
         e.preventDefault(); 
+        e.stopPropagation();
 
         const inputVal = this.value.trim().toLowerCase();
         this.value = '';
