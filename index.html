@@ -53,7 +53,7 @@
       </div>
       
       <div class="status-badge">
-        <span class="status-dot"></span> System Online & Ready to Build
+        <span class="status-dot"></span> Idling
       </div>
       
       <h1>Martua Kevin Damara Hutagaol</h1>
@@ -159,14 +159,14 @@
             <span class="btn-minimize"></span>
             <span class="btn-maximize"></span>
           </div>
-          <div class="terminal-title">root@akasha:~</div>
+          <div class="terminal-title">Akasha Terminal</div>
         </div>
         <div class="terminal-body" id="terminal-body">
           <p class=""term-line">Welcome to the interactive terminal. Type <span class="term-amber">help</span> for a list of available commands.</p>
           <div id="terminal-output"></div>
           <div class="terminal-input-line">
             <span class="term-green">root@akasha</span>:<span class="term-blue">~</span>$&nbsp;
-            <input type="text" id="terminal-input" autofocus autocomplete="off" spellcheck="false">
+            <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" enterkeyhints="send">
           </div>
         </div>
       </div>
@@ -250,7 +250,6 @@
     <!-- contact -->
     <footer id="contact">
       <h2 class="section-title title-center">Contact Me</h2>
-      <p class="contact-desc">Open to job opportunities, freelance projects, or open-source collaborations.</p>
       
       <div class="contact-links">
         <a href="mailto:kevinhutagaol2008@gmail.com" class="contact-item">📧 kevinhutagaol2008@gmail.com</a>
@@ -330,6 +329,8 @@
 
     termInput.addEventListener('keydown', function(e) {
       if (e.key === 'Enter') {
+        e.preventDefault(); 
+
         const inputVal = this.value.trim().toLowerCase();
         this.value = '';
 
@@ -344,7 +345,7 @@
         let response = commands[inputVal] || `Command not found: '${inputVal}'. Type <span class="term-amber">help</span> for a list of available commands.`;
 
         line.innerHTML = `
-          <p class="term-line"><span class="term-green">root@akasha:~</span>:<span class="term-blue">~</span>$ ${inputVal}</p>
+          <p class="term-line"><span class="term-green">root@akasha</span>:<span class="term-blue">~</span>$ ${inputVal}</p>
           <p class="term-response">${response}</p>
         `;
 
