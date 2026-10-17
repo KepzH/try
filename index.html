@@ -58,6 +58,8 @@
     </ul>
   </div>
 
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+
   <!-- main -->
   <main class="container">
     
@@ -376,23 +378,30 @@
     });
 
     // drawer logic
-const navToggle = document.getElementById('nav-toggle');
-const mobileDrawer = document.getElementById('mobile-drawer');
-const mobileLinks = document.querySelectorAll('.mobile-links a');
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const drawerBackdrop = document.getElementById('drawer-backdrop');
+    const mobileLinks = document.querySelectorAll('.mobile-links a');
 
-if (navToggle && mobileDrawer) {
-  navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('active');
-    mobileDrawer.classList.toggle('active');
-  });
+    function closeDrawer() {
+      if (navToggle) navToggle.classList.remove('active');
+      if (mobileDrawer) mobileDrawer.classList.remove('active');
+      if (drawerBackdrop) drawerBackdrop.classList.remove('active');
+    }
 
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      navToggle.classList.remove('active');
-      mobileDrawer.classList.remove('active');
-    });
-  });
-}
+    if (navToggle && mobileDrawer && drawerBackdrop) {
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        mobileDrawer.classList.toggle('active');
+        drawerBackdrop.classList.toggle('active');
+      });
+
+      drawerBackdrop.addEventListener('click', closeDrawer);
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', closeDrawer);
+      });
+    }
     // calc logik
     function calculateWinrate(totalMatch, currentWr, targetWr) {
       const match = parseFloat(totalMatch);
