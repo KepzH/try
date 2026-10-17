@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- tag -->
+  <title>Martua Kevin Damara Hutagaol — Full-Stack Web Developer & Server Admin</title>
+  <meta name="title" content="Kevin Hutagaol's Portofolio">
+  <meta name="description" content="Full-Stack Web Developer">
+
+  <!-- sosmed preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://github.com/KepzH">
+  <meta property="og:title" content="Kevin Hutagaol">
+  <meta property="og:description" content="Full-Stack Web Developer">
+  <meta property="og:image" content="https://raw.githubusercontent.com/KepzH/music-player/main/preview.png">
+
+  <!-- elemen -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- canvas -->
+  <canvas id="stars-canvas"></canvas>
+
+  <!-- navbar -->
+  <nav>
+    <div class="nav-logo">AKASHA<span>.xyz</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#terminal">Terminal</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- main -->
+  <main class="container">
+    
+    <!-- interface -->
+    <section class="hero">
+      <div class="blackhole-video-container">
+        <video autoplay loop muted playsinline class="blackhole-video">
+          <source src="blackhole.webm" type="video/webm">
+          <source src="blackhole.mp4" type="video/mp4">
+        </video>
+      </div>
+      
+      <div class="status-badge">
+        <span class="status-dot"></span> System Online & Ready to Build
+      </div>
+      
+      <h1>Martua Kevin Damara Hutagaol</h1>
+      <p class="subtitle">Full-Stack Web Developer</p>
+
+      <div class="btn-group">
+        <a href="#contact" class="btn btn-primary">Contact Me</a>
+        <a href="https://github.com/KepzH" target="_blank" rel="noopener" class="btn btn-outline">GitHub Profile ↗</a>
+      </div>
+    </section>
+
+    <!-- lb -->
+    <section id="about">
+      <h2 class="section-title">Profile & Education</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>About Me</h3>
+          <p>
+            Student who focuses on information technology and software engineering. Has practical experience in building full-stack web applications, automating Discord bots, operating Linux/Windows VPS servers, and developing Android applications.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Education</h3>
+          <div class="item-title">MAS SEPATAN</div>
+          <div class="item-sub">Science Program</div>
+          <p class="score-text">Average: <strong>88.87</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ngilmu -->
+    <section id="skills">
+      <h2 class="section-title">Technical Expertise</h2>
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: -1.2rem; margin-bottom: 1.5rem;">
+
+      <div class="card">
+        
+        <div class="skill-group">
+          <h4>Programming Languages</h4>
+          <div class="tags">
+            <span class="tag skill-interactive" data-tech="Python">Python</span>
+            <span class="tag skill-interactive" data-tech="JavaScript">JavaScript</span>
+            <span class="tag skill-interactive" data-tech="Java">Java</span>
+            <span class="tag skill-interactive" data-tech="C#">C#</span>
+            <span class="tag skill-interactive" data-tech="PHP">PHP</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4>Front-End & Back-End</h4>
+          <div class="tags">
+            <span class="tag skill-interactive" data-tech="HTML & CSS">HTML & CSS</span>
+            <span class="tag skill-interactive" data-tech="React.js">React.js</span>
+            <span class="tag skill-interactive" data-tech="Angular">Angular</span>
+            <span class="tag skill-interactive" data-tech="Node.js">Node.js</span>
+            <span class="tag skill-interactive" data-tech="Express.js">Express.js</span>
+            <span class="tag skill-interactive" data-tech="RESTful API">RESTful API</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4>Database & Tooling</h4>
+          <div class="tags">
+            <span class="tag skill-interactive" data-tech="MongoDB">MongoDB</span>
+            <span class="tag skill-interactive" data-tech="MySQL">MySQL</span>
+            <span class="tag skill-interactive" data-tech="Discord.js">Discord.js</span>
+            <span class="tag skill-interactive" data-tech="Git">Git</span>
+            <span class="tag skill-interactive" data-tech="Android Studio">Android Studio</span>
+            <span class="tag skill-interactive" data-tech="Visual Studio Code">Visual Studio Code</span>
+          </div>
+        </div>
+
+        <div class="skill-group skill-group-last">
+          <h4>Infrastruktur & Server</h4>
+          <div class="tags">
+            <span class="tag skill-interactive" data-tech="Virtual Private Server Management">Virtual Private Server Management</span>
+            <span class="tag skill-interactive" data-tech="Linux Server Administration">Linux Server Administration</span>
+            <span class="tag skill-interactive" data-tech="Basic Networking">Basic Networking</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ngambang -->
+      <div id="skill-popover" class="skill-popover">
+        <div class="popover-header">
+          <span id="popover-tech-title">Technology</span>
+          <span class="popover-close" id="popover-close-btn">&times;</span>
+        </div>
+        <div class="popover-body" id="popover-projects-list">
+          <!-- list -->
+        </div>
+      </div>
+    </section>
+
+    <!-- terminal -->
+    <section id="terminal">
+      <h2 class="section-title">Terminal</h2>
+      <div class="terminal-box">
+        <div class="terminal-header">
+          <div class="terminal-buttons">
+            <span class="btn-close"></span>
+            <span class="btn-minimize"></span>
+            <span class="btn-maximize"></span>
+          </div>
+          <div class="terminal-title">root@:~</div>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+          <p class="term-line"><span class="term-green">root@akasha:~</span>:<span class="term-blue">~</span>$ help</p>
+          <p class="term-response">Available commands: <span class="term-amber">about</span>, <span class="term-amber">skills</span>, <span class="term-amber">projects</span>, <span class="term-amber">clear</span>, <span class="term-amber">contact</span></p>
+          <div id="terminal-output"></div>
+          <div class="terminal-input-line">
+            <span class="term-green">root@akasha:~</span>:<span class="term-blue">~</span>$&nbsp;
+            <input type="text" id="terminal-input" autofocus autocomplete="off" spellcheck="false">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- proyek -->
+    <section id="experience">
+      <h2 class="section-title">Experience & Main Projects</h2>
+
+      <div class="card">
+        <div class="item-header">
+          <div class="item-title">Full-Stack Web Developer</div>
+          <div class="item-date">2022 – Present</div>
+        </div>
+        <div class="item-sub">Personal & Client Web Projects</div>
+        <ul class="item-list">
+          <li>Creating a responsive web interface using React.js, Angular.</li>
+          <li>Developing backend microservices and REST API with Node.js, Express, and Python.</li>
+          <li>Managing integration of NoSQL (MongoDB) and Relational (MySQL) databases.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="item-header">
+          <div class="item-title">Game Server Developer & Administrator</div>
+          <div class="item-date">Self-Hosted</div>
+        </div>
+        <div class="item-sub">GTA SA Roleplay & Growtopia Private Servers</div>
+        <ul class="item-list">
+          <li>Configuration and maintenance of Linux/Windows servers based on VPS/RDP.</li>
+          <li>Network optimization, port security management, DDoS prevention, and ensuring high uptime.</li>
+          <li>Runtime troubleshooting and server RAM/CPU consumption efficiency.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="item-header">
+          <div class="item-title">Discord Bot Developer & Audio Streaming</div>
+          <div class="item-date">2021 – Present</div>
+        </div>
+        <div class="item-sub">Discord Music Bot & Decryption API</div>
+        <ul class="item-list">
+          <li>Developing a real-time Discord music bot with queue, loop, and audio manipulation features.</li>
+          <li>Integrating voice channel functionality with a high-speed audio streaming decryption backend.</li>
+          <li>Deploying and operating the bot 24/7 using personal VPS infrastructure.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="item-header">
+          <div class="item-title">Android Application Developer</div>
+          <div class="item-date">2024 – Present</div>
+        </div>
+        <div class="item-sub">Personal Android Applications</div>
+        <ul class="item-list">
+          <li>Designing native Android applications using Android Studio and integrating external APIs.</li>
+          <li>Testing performance across devices, creating APK builds, and debugging.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="item-header">
+          <div class="item-title">Winrate Calculator</div>
+          <div class="item-date">Tools</div>
+        </div>
+        <div class="item-sub">Calculate your games winrate in here</div>
+
+        <!-- interface -->
+        <div class="wr-calculator-form" style="display: flex; flex-direction: column; gap: 0.8rem; margin: 1rem 0;">
+          <input type="number" id="total-match" placeholder="Current total match" class="tag" style="padding: 0.6rem; color: #fff; outline: none;">
+          <input type="number" id="current-wr" placeholder="Current winrate" class="tag" style="padding: 0.6rem; color: #fff; outline: none;">
+          <input type="number" id="target-wr" placeholder="Winrate target)" class="tag" style="padding: 0.6rem; color: #fff; outline: none;">
+          <button id="btn-calculate" class="btn-sm btn-primary" style="cursor: pointer; justify-content: center; padding: 0.6rem;">Count </button>
+        </div>
+
+        <!-- hasil -->
+        <div id="result-output" style="font-size: 0.88rem; margin-top: 0.5rem; font-weight: 500;"></div>
+      </div>
+    </section>
+
+    <!-- contact -->
+    <footer id="contact">
+      <h2 class="section-title title-center">Contact Me</h2>
+      <p class="contact-desc">Open to job opportunities, freelance projects, or open-source collaborations.</p>
+      
+      <div class="contact-links">
+        <a href="mailto:kevinhutagaol2008@gmail.com" class="contact-item">📧 kevinhutagaol2008@gmail.com</a>
+        <a href="https://github.com/KepzH" target="_blank" rel="noopener" class="contact-item">🐙 github.com/KepzH</a>
+        <span class="contact-item">📱 +62-813-8006-3836</span>
+        <span class="contact-item">📍 Tangerang, Indonesia</span>
+      </div>
+
+      <div class="copyright">
+        © 2026 Akasha. All rights reserved.
+      </div>
+    </footer>
+  </main>
+
+  <!-- logic -->
+  <script>
+    // 1. canvas bntg
+    const canvas = document.getElementById('stars-canvas');
+    const ctx = canvas.getContext('2d');
+    let stars = [];
+    const numStars = 140;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    function initStars() {
+      stars = [];
+      for (let i = 0; i < numStars; i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 1.4,
+          alpha: Math.random(),
+          speed: Math.random() * 0.008 + 0.003
+        });
+      }
+    }
+
+    function drawStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      stars.forEach(star => {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${star.alpha})`;
+        ctx.fill();
+
+        star.alpha += star.speed;
+        if (star.alpha > 1 || star.alpha < 0) {
+          star.speed = -star.speed;
+        }
+      });
+      requestAnimationFrame(drawStars);
+    }
+
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      initStars();
+    });
+
+    resizeCanvas();
+    initStars();
+    drawStars();
+
+    // 2. interaktiff
+    const termInput = document.getElementById('terminal-input');
+    const termOutput = document.getElementById('terminal-output');
+
+    const commands = {
+      about: "Student & Full-Stack Web Developer from Tangerang. Indonesia. Expert in Node.js, React, Android Studio, and Linux administration.",
+      skills: "Languages: JS, Python, Java, C#, PHP. Backend: Node, Express, REST API. DB: MongoDB, MySQL. Infrastructure: Virtual Private Server, Linux Admin.",
+      projects: "1. Discord Music Bot (Audio Streamer) | 2. GTA SA Roleplay Servers & Growtopia Game Private Servers | 3. Full-Stack Web Apps | 4. Android Apps",
+      contact: "Email: kevinhutagaol2008@gmail.com | Phone: +62-813-8006-3836 | GitHub: github.com/KepzH",
+      help: "Available commands: about, skills, projects, clear, contact"
+    };
+
+    termInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        const inputVal = this.value.trim().toLowerCase();
+        this.value = '';
+
+        if (inputVal === 'clear') {
+          termOutput.innerHTML = '';
+          return;
+        }
+
+        const line = document.createElement('div');
+        line.className = 'term-history-item';
+        
+        let response = commands[inputVal] || `Command not found: '${inputVal}'. Type <span class="term-amber">help</span> for a list of available commands.`;
+
+        line.innerHTML = `
+          <p class="term-line"><span class="term-green">kevin@blackhole-vps</span>:<span class="term-blue">~</span>$ ${inputVal}</p>
+          <p class="term-response">${response}</p>
+        `;
+
+        termOutput.appendChild(line);
+        document.getElementById('terminal-body').scrollTop = document.getElementById('terminal-body').scrollHeight;
+      }
+    });
+
+    // calc logik
+    function calculateWinrate(totalMatch, currentWr, targetWr) {
+      const match = parseFloat(totalMatch);
+      const current = parseFloat(currentWr);
+      const target = parseFloat(targetWr);
+
+      if (isNaN(match) || isNaN(current) || isNaN(target)) {
+        return { success: false, message: "Please input a valid quantity." };
+      }
+      if (match <= 0) {
+        return { success: false, message: "Total matches must be greater than 0." };
+      }
+      if (current < 0 || current > 100 || target < 0 || target > 100) {
+        return { success: false, message: "Win rate must be between 0% and 100%." };
+      }
+      if (target >= 100) {
+        return { success: false, message: "Win rate target cannot be achieved if you have ever lost." };
+      }
+      if (target <= current) {
+        return { success: false, message: "Winrate target must be greater than the current win rate." };
+      }
+
+      const winsNeeded = Math.ceil((match * (target - current)) / (100 - target));
+
+      return {
+        success: true,
+        message: `You need a minimum <strong>${winsNeeded} win streak</strong> (without losing) to achieve a ${target}% win rate.`
+      };
+    }
+
+    // count
+    document.getElementById('btn-calculate').addEventListener('click', () => {
+      const matchInput = document.getElementById('total-match').value;
+      const currentWrInput = document.getElementById('current-wr').value;
+      const targetWrInput = document.getElementById('target-wr').value;
+      const resultDiv = document.getElementById('result-output');
+
+      const result = calculateWinrate(matchInput, currentWrInput, targetWrInput);
+
+      if (result.success) {
+        resultDiv.style.color = '#ff9d00';
+        resultDiv.innerHTML = result.message;
+      } else {
+        resultDiv.style.color = '#ef4444';
+        resultDiv.innerText = result.message;
+      }
+    });
+
+    // floating skiils handler
+    const techProjectsData = {
+      "Python": [
+        "Discord Bot & Custom Utilities Automation",
+        "Backend RESTful API & Scripting Development",
+        "Data Processing & Audio Decoding Scripts"
+      ],
+      "JavaScript": [
+        "Full-Stack Web Application",
+        "Discord Music Bot Engine & Audio Player",
+        "Interactive UI/UX & Dynamic Client Features"
+      ],
+      "Java": [
+        "Android Native Applications Development",
+        "OOP Concepts Implementation & Software Architecture"
+      ],
+      "C#": [
+        "Server & System Scripting Development",
+        "Desktop Utilities & Windows Tools"
+      ],
+      "PHP": [
+        "Backend Web Application & Database MySQL Integration",
+        "REST API Endpoints & Server-Side Rendering"
+      ],
+      "HTML & CSS": [
+        "Responsive Web Design & Layout Glassmorphic",
+        "Advanced CSS Design and Animations "
+      ],
+      "React.js": [
+        "Single Page Application (SPA) Front-End",
+        "Dashboard Interactive & Component-Based Architecture"
+      ],
+      "Angular": [
+        "Full-Stack Web Application Development",
+        "Angular Services Integration & State Management"
+      ],
+      "Node.js": [
+        "Discord Music Bot Engine & Audio Player",
+        "Backend Microservices & Scalable REST API"
+      ],
+      "Express.js": [
+        "API Gateway & Lightweight Web Server",
+        "Routing Middleware & Auth Services"
+      ],
+      "RESTful API": [
+        "Endpoint Third-Party & External Services Integration",
+        "Secure Authentication & Data Exchange Format JSON"
+      ],
+      "MongoDB": [
+        "Schema Design NoSQL for User Sessions & Bot State",
+      ],
+      "MySQL": [
+        "Database Relational management for Game Server & Web Apps",
+        "SQL Complex Query, Table Management, & User Data management"
+      ],
+      "Discord.js": [
+        "Bot Discord Voice Channel Streaming Audio 24/7",
+        "Moderation System, Queue Music, & Custom Commands"
+      ],
+      "Git": [
+        "Version Control System & Branching Workflow",
+        "Deployment & Repository Management on GitHub"
+      ],
+      "Android Studio": [
+        "Build Generation, Debugging, & Deployment File APK",
+        "Mobile UI Layouts & Local SQLite Storage"
+      ],
+      "Virtual Studio Code": [
+        "Main IDE for Flutter, Dart, JavaScript, & Web Stack",
+        "Extension Configuration & Development Environment"
+      ],
+      "Virtual Private Machine Management": [
+        "Server VPS Linux/Windows management (Self-Hosted)",
+        "Port Configuration, Security, & Guarding Uptime 24/7"
+      ],
+      "Linux Server Admin": [
+        "Administration CLI Ubuntu/Debian Server via SSH",
+        "Setup Daemon Service Node.js & Daemon Servers"
+      ],
+      "Basic Networking": [
+        "Routing IP, Port Forwarding, RDP, & Firewall Rules",
+        "DDoS Mitigation & Optimization Server Latency "
+      ]
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const popover = document.getElementById('skill-popover');
+      const popoverTitle = document.getElementById('popover-tech-title');
+      const popoverList = document.getElementById('popover-projects-list');
+      const closeBtn = document.getElementById('popover-close-btn');
+      const skillTags = document.querySelectorAll('.skill-interactive');
+
+      let activeTag = null;
+
+      function showPopover(tagElement) {
+        const tech = tagElement.getAttribute('data-tech');
+        if (!tech) return;
+
+        const projects = techProjectsData[tech] || ["Project still on development..."];
+
+        popoverTitle.textContent = tech;
+        
+        let listHTML = '<ul>';
+        projects.forEach(proj => {
+          listHTML += `<li>${proj}</li>`;
+        });
+        listHTML += '</ul>';
+        popoverList.innerHTML = listHTML;
+        popover.style.display = 'block';
+        
+        const rect = tagElement.getBoundingClientRect();
+        const popoverWidth = popover.offsetWidth || 280;
+        const popoverHeight = popover.offsetHeight || 150;
+
+        let left = rect.left + (rect.width / 2) - (popoverWidth / 2);
+        let top = rect.top - popoverHeight - 12;
+
+        if (rect.top - popoverHeight < 15) {
+          top = rect.bottom + 12;
+        }
+
+        if (left + popoverWidth > window.innerWidth - 10) {
+          left = window.innerWidth - popoverWidth - 15;
+        }
+
+        if (left < 10) {
+          left = 15;
+        }
+
+        popover.style.left = `${left}px`;
+        popover.style.top = `${top}px`;
+
+        if (activeTag) activeTag.classList.remove('active');
+        tagElement.classList.add('active');
+        activeTag = tagElement;
+
+        popover.classList.add('visible');
+      }
+
+      function hidePopover() {
+        popover.classList.remove('visible');
+        if (activeTag) {
+          activeTag.classList.remove('active');
+          activeTag = null;
+        }
+      }
+
+      skillTags.forEach(tag => {
+        tag.addEventListener('mouseenter', () => {
+          if (window.innerWidth > 768) {
+            showPopover(tag);
+          }
+        });
+
+        tag.addEventListener('mouseleave', () => {
+          if (window.innerWidth > 768) {
+            hidePopover();
+          }
+        });
+
+        tag.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (activeTag === tag && popover.classList.contains('visible')) {
+            hidePopover();
+          } else {
+            showPopover(tag);
+          }
+        });
+      });
+
+      if (closeBtn) closeBtn.addEventListener('click', hidePopover);
+
+      document.addEventListener('click', (e) => {
+        if (popover && !popover.contains(e.target) && !e.target.classList.contains('skill-interactive')) {
+          hidePopover();
+        }
+      });
+    });
+
+  </script>
+</body>
+</html>
